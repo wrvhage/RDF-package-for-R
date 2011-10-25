@@ -8,7 +8,7 @@ Save RDF to file.
 This function saves triples from a data.frame with the columns subject, predicate, and object to an RDF file indicated by a filename. Each row in the data.frame represents a triple.
 }
 \usage{
-rdf_save(triples,target="Rout.rdf",format='rdfxml',namespaces=c())
+rdf_save(triples,target="Rout.rdf",format='rdfxml',spo=NULL,namespaces=c())
 }
 %%- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,6 +20,9 @@ rdf_save(triples,target="Rout.rdf",format='rdfxml',namespaces=c())
 }
 \item{format}{
   The shorthand name of the RDF syntax to be used. All shorthands supported by libraptor2, see: http://librdf.org/raptor/, are also supported by rdf_save.
+}
+\item{spo}{
+  Indicate which data frame columns are to be interpreted as the subjects, predicates, and objects of the triples to be saved. If there are only three columns, these are interpreted to be respectively the subject, predicate and object column.
 }
 \item{namespaces}{
   A vector containing pairs of namespaces and their shorthands to be used for shortening URIs in the file. For example, c('rdf', '<http://www.w3.org/1999/02/22-rdf-syntax-ns#>', 'dc', '<http://purl.org/dc/elements/1.1/>').
@@ -67,6 +70,12 @@ rdf_save(list(triples=triples,namespaces=c()),
 # equivalent, more convenient way to call the function
 rdf_save(triples, target="rdftest.rdf", format="rdfxml",
          namespaces=c('test', '<http://test/>'))
+
+# explicitly name which columns to use as subject, predicate and object
+rdf_save(triples, target="rdftest.rdf", format="rdfxml",
+         spo=c('subject','predicate','object'),
+         namespaces=c('test', '<http://test/>'))
+
 
 }
 \keyword{ RDF }

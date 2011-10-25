@@ -35,16 +35,17 @@ triples <- data.frame(cbind(subject, predicate, object))
 
 # save triple data.frame to RDF file
 rdf_save(list(triples=triples,namespaces=c()),
-         target="rdftest.rdf", format="rdfxml",
+         target="rdftest.ttl", format="turtle",
+	 spo=c("subject","predicate","object"),
          namespaces=c('test', '<http://test/>'))
 
 # equivalent, more convenient way to call the function
-rdf_save(triples, target="rdftest.rdf", format="rdfxml",
+rdf_save(triples, target="rdftest.ttl", format="turtle",
          namespaces=c('test', '<http://test/>'))
 
 # read triples from RDF file to data.frame
 r <- rdf_load("rdftest.ttl")
-rdf_save(r, 'filetest.ttl', 'turtle',
+rdf_save(r, target='filetest.ttl', format='turtle',
          namespaces=c('lop', '<http://semanticweb.cs.vu.nl/poseidon/ns/instances/>'))
 
 # The following statements are now true:

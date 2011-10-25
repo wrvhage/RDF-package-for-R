@@ -227,7 +227,7 @@ raptor_term *parse_object_string(raptor_world *world, const char *object) {
 	return object_term;
 }
 
-SEXP rdf_save(SEXP data, SEXP target, SEXP format, SEXP namespaces)
+SEXP rdf_save(SEXP data, SEXP target, SEXP format, SEXP spo, SEXP namespaces)
 {
 	SEXP triples, subject, predicate, object;
     const char *format_string = (isNull(format) ? "rdfxml" : CHAR(STRING_ELT(format, 0))),
@@ -237,12 +237,12 @@ SEXP rdf_save(SEXP data, SEXP target, SEXP format, SEXP namespaces)
 	raptor_term *base_uri_term = NULL;
     int i;
 
-	subject = Rf_asCharacterFactor(getListElement(data, "subject"));
+	subject = Rf_asCharacterFactor(getListElement(data, CHAR(STRING_ELT(spo,0))));
 	if (length(subject) == 0) {
 		return R_NilValue;
 	}
-	predicate = Rf_asCharacterFactor(getListElement(data, "predicate"));
-	object = Rf_asCharacterFactor(getListElement(data, "object"));
+	predicate = Rf_asCharacterFactor(getListElement(data, CHAR(STRING_ELT(spo,1))));
+	object = Rf_asCharacterFactor(getListElement(data, CHAR(STRING_ELT(spo,2))));
 	
 	world = raptor_new_world();
 	base_uri = raptor_new_uri(world, filename);

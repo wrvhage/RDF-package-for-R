@@ -1,0 +1,646 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base file:///Users/wrvhage/Programming/R_ext/test.rdf
+        
+#  Notation3 generation by
+#       notation3.py,v 1.200 2007/12/11 21:18:08 syosi Exp
+
+#   Base was: file:///Users/wrvhage/Programming/R_ext/test.rdf
+     @prefix : <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_anti_pollution_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label [  rdf:value "anti-pollution vessel" ].
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge_lift>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_barge>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug_and_barge>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "barge"@nl;
+         skos:related <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug_and_barge> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge_container_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "barge container carrier";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.barge>,
+                <http://sw.opencyc.org/concept/Mx4rv68PXpwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-barge-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge_lift>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge>;
+         :label "lift barge" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_bitumen_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "bitumen tanker";
+         skos:relatedMatch <http://rdf.freebase.com/ns/en.bitumen> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_bulk_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_cement_carrier>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_obo_carrier>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "bulk carrier";
+         skos:broadMatch <http://sw.opencyc.org/concept/Mx4rvm1tKJwpEbGdrcN5Y29ycA>;
+         skos:closeMatch <http://rdf.freebase.com/ns/en.bulk_carrier>,
+                <http://sw.opencyc.org/concept/Mx4rviBZo5wpEbGdrcN5Y29ycA> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_bunkering_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "bunkering tanker" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_cable-layer>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "cable-layer" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_catamaran>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "catamaran";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.catamaran>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-catamaran-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_cement_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_bulk_carrier>;
+         :label "cement carrier" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_chemical_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "chemical tanker";
+         :seeAlso <http://rdf.freebase.com/ns/en.chemical_tanker>;
+         skos:closeMatch <http://sw.opencyc.org/concept/Mx4rvnc82JwpEbGdrcN5Y29ycA> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_combination_carrier_OBO>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "combination carrier (OBO)" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_container>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_reefer>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "container ship";
+         skos:closeMatch <http://www.w3.org/2006/03/wn/wn20/instances/synset-container_ship-noun-1>;
+         skos:closematch <http://rdf.freebase.com/ns/en.container_ship> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_crane_ship>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pipe_layer_crane_ship>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "crane ship" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_crew_boat>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_passenger_vessel>;
+         :label "crew boat" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_crude_oil_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "crude oil tanker" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_cruise>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_passenger_vessel>;
+         :label "cruise ship";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.cruise_ship> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_dhow>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "dhow";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.dhow>,
+                <http://sw.opencyc.org/concept/Mx4ri8JPoBqcEdyVMwDggVUTGw>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-dhow-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_dredging_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_hopper_dredger>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "dredging vessel";
+         skos:closeMatch <http://www.w3.org/2006/03/wn/wn20/instances/synset-dredger-noun-1>;
+         skos:relatedMatch <http://sw.opencyc.org/concept/Mx4rk-FlYieAQdiL5qoPxSYGVg> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_ferry>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_high-speed_craft>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_passenger_vessel>;
+         :label "ferry boat";
+         :seeAlso <http://rdf.freebase.com/ns/en.ferry>;
+         owl:sameAs <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_ro-ro>;
+         skos:closeMatch <http://www.w3.org/2006/03/wn/wn20/instances/synset-ferry-noun-1>;
+         skos:closematch <http://sw.opencyc.org/concept/Mx4rwQCasJwpEbGdrcN5Y29ycA> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fishing_trawler>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fishing_vessel>;
+         :label "fishing trawler";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.trawler>,
+                <http://sw.opencyc.org/concept/Mx4rwQCNo5wpEbGdrcN5Y29ycA>;
+         skos:relatedMatch <http://www.w3.org/2006/03/wn/wn20/instances/synset-trawl-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fishing_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fishing_trawler>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "fishing vessel";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.fishing_boat>,
+                <http://sw.opencyc.org/concept/Mx4rvgWe-5wpEbGdrcN5Y29ycA>;
+         skos:closematch <http://www.w3.org/2006/03/wn/wn20/instances/synset-fishing_boat-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fpso>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "fpso";
+         owl:sameAs <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fso>;
+         skos:closeMatch <http://rdf.freebase.com/ns/en.floating_production_storage_and_offloading> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_frigate>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_warship>;
+         :label "frigate" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fso>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "fso" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fspo>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_processing_tanker>;
+         :label "floating production storage and offloading" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_gas_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "gas carreier" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_general_cargo>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_refrigerated_cargo_carrier>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "general cargo vessel";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.cargo_ship>,
+                <http://sw.opencyc.org/concept/Mx4rwQCRkZwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-cargo_ship-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_heavy_load_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "heavy load carrier" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_high-speed_craft>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_ferry>;
+         :label "high-speed craft" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_hopper_dredger>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_dredging_vessel>;
+         :label "hopper dredger" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_juice_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "juice tanker";
+         skos:relatedMatch <http://rdf.freebase.com/ns/en.juice>,
+                <http://sw.opencyc.org/concept/Mx4rvVjM2ZwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-juice-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_landing_craft>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "landing craft" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_law_enforcement_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "law enforcement vessel";
+         skos:relatedMatch <http://sw.opencyc.org/concept/Mx4rvV399JwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-law_enforcement-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_livestock_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "livestock carrier" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_lng_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_lpg_tanker>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "liquified natural gas (LNG) carrier" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_lpg_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_lng_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "liquified petroleum gas (LPG) carrier";
+         skos:closeMatch <http://sw.opencyc.org/concept/Mx4r1d1xNyH0SNaK9JR6yohCRg>;
+         skos:relatedMatch <http://rdf.freebase.com/ns/en.liquified_petroleum_gas> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge_container_carrier>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_bulk_carrier>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_container>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_gas_carrier>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_general_cargo>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_heavy_load_carrier>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_livestock_carrier>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_ro-ro>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_stone_carrier>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vehicle_carrier>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_wood_chip_carrier>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "merchant vessel";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.merchant_vessel>,
+                <http://sw.opencyc.org/concept/Mx4rvm1tKJwpEbGdrcN5Y29ycA> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_null>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         :label "no information provided" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_obo_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_bulk_carrier>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "ore-bulk-oil carrier (OBO) carrier" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_barge>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge>;
+         :label "offshore barge" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_processing_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fspo>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "offshore processing tanker" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_service_ship>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "offshore service ship" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_supply>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_supply_vessel>;
+         :label "offshore supply vessel" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_support_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "offshore support vessel" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_tug>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug>;
+         :label "offshore tug" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_oil_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "oil tanker";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.oil_tanker>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-oil_tanker-noun-1>;
+         skos:closematch <http://sw.opencyc.org/concept/Mx4rwTD6JpwpEbGdrcN5Y29ycA> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_other_ship>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "other ship" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_passenger_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_crew_boat>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_cruise>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_ferry>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "passenger vessel";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.passenger_ship>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-passenger_ship-noun-1>;
+         skos:relatedMatch <http://sw.opencyc.org/concept/Mx4rvViM4pwpEbGdrcN5Y29ycA> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pilot_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "pilot vessel";
+         skos:relatedMatch <http://rdf.freebase.com/ns/en.harbour_pilot> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pipe_layer_crane_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_crane_ship>;
+         :label "pipe layer crane vessel" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_platform_rig>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "platform rig";
+         skos:relatedMatch <http://rdf.freebase.com/ns/en.drilling_rig> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pleasure_craft>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_yacht>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "pleasure craft";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.pleasure_craft> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pollution_control_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "pollution control vessel";
+         skos:relatedMatch <http://rdf.freebase.com/ns/en.pollution_control> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_product_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "product tanker" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pusher_tug>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug>;
+         :label "pusher tug" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_reefer>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_container>;
+         :label "reefer";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.reefer>;
+         skos:relatedMatch <http://sw.opencyc.org/concept/Mx4rvVjQmJwpEbGdrcN5Y29ycA> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_refrigerated_cargo_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         :label "refrigerated cargo carrier" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_research_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_seismographic_research>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "research vessel";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.research_vessel>;
+         skos:relatedMatch <http://sw.opencyc.org/concept/Mx4rx-QD-i0gQdmYVa2cf5r76g> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_ro-ro>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "roll-on/roll-off";
+         owl:sameAs <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_ferry>;
+         skos:closeMatch <http://rdf.freebase.com/ns/en.roro> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_sailing_boat>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "sailing boat";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.sailboat>,
+                <http://rdf.freebase.com/ns/en.sailing_ship>,
+                <http://sw.opencyc.org/concept/Mx4rK9SXFirdEdqAAAACs71DGQ>,
+                <http://sw.opencyc.org/concept/Mx4ro4XKcC6gEdqAAAACs71DGQ>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-sailboat-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_search_and_rescue_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_law_enforcement_vessel>;
+         :label "search and rescue vessel" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_seismographic_research>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_research_vessel>;
+         :label "seismographic research vessel" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_semi-submersible_heavy_lift>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "semi-submersible heavy lift";
+         skos:broadMatch <http://rdf.freebase.com/ns/en.semi-submersible> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_shuttle_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>;
+         :label "shuttle tanker";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.shuttle_tanker> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_special_purpose_ship>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "special purpose ship" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_stone_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "stone carrier";
+         skos:relatedMatch <http://sw.opencyc.org/concept/Mx4rwPudOZwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-rock-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_supply_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_supply>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "supply vessel" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tanker>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_bitumen_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_bunkering_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_chemical_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_crude_oil_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_juice_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_lng_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_lpg_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_obo_carrier>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_oil_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_product_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_shuttle_tanker>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "tanker";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.tanker>,
+                <http://sw.opencyc.org/concept/Mx4rwQCPwpwpEbGdrcN5Y29ycA> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_towing_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug>;
+         :label "towing vessel" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_tug>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pusher_tug>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug_and_barge>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "tug";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.tugboat>,
+                <http://sw.opencyc.org/concept/Mx4rwQCbHpwpEbGdrcN5Y29ycA>;
+         skos:closematch <http://www.w3.org/2006/03/wn/wn20/instances/synset-tugboat-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug_and_barge>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug>;
+         :label "tug and barge";
+         skos:related <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vehicle_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "vehicle carrier";
+         skos:relatedMatch <http://rdf.freebase.com/ns/en.vehicle>,
+                <http://sw.opencyc.org/concept/Mx4rwLzhaZwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-vehicle-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_anti_pollution_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_barge>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_cable-layer>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_catamaran>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_combination_carrier_OBO>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_crane_ship>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_dhow>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_dredging_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fishing_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fpso>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_fso>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_landing_craft>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_law_enforcement_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_processing_tanker>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_service_ship>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_offshore_support_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_other_ship>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_passenger_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pilot_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_platform_rig>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pleasure_craft>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pollution_control_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_research_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_sailing_boat>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_semi-submersible_heavy_lift>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_special_purpose_ship>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_supply_vessel>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_tug>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_warship>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_work_boat>;
+         :label "vessel";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.ship>,
+                <http://sw.opencyc.org/concept/Mx4rvVi-55wpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-vessel-noun-2> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_warship>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_frigate>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "warship" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_wood_chip_carrier>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_merchant_vessel>;
+         :label "wood chip carrier" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_work_boat>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_vessel>;
+         :label "work boat" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_yacht>     a <http://semanticweb.cs.vu.nl/2009/11/sem/ActorType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/atype_pleasure_craft>;
+         :label "yacht";
+         skos:closeMatch <http://rdf.freebase.com/ns/en.yacht>,
+                <http://sw.opencyc.org/concept/Mx4run14FjC7QdiKbp3T8_xoXA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-sailboat-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_anchored>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_stopped>;
+         :label "anchored";
+         skos:closematch <http://www.w3.org/2006/03/wn/wn20/instances/synset-anchor-verb-2>;
+         skos:relatedMatch <http://rdf.freebase.com/ns/en.anchor>,
+                <http://sw.opencyc.org/concept/Mx4rEZN5ZSTPEdyJBQDggVUTGw>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-anchor-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_arriving>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "arriving at a certain location";
+         skos:closeMatch <http://sw.opencyc.org/concept/Mx4rvyLZypwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-arrive-verb-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_attempted>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_piracy>;
+         :label "attempted hijacking";
+         skos:relatedMatch <http://sw.opencyc.org/concept/Mx4rwFH745wpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-attempt-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_boarded>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_kidnapped>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_robbed>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_piracy>;
+         :label "boarding";
+         skos:closeMatch <http://purl.org/vocabularies/princeton/wn30/synset-boarding-noun-1>,
+                <http://sw.opencyc.org/concept/board-verb-1>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-board-verb-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_constant_speed>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "constant speed";
+         skos:closeMatch <http://sw.opencyc.org/concept/Mx4rSFyVWlrGEdqAAAACs6hRXg>;
+         skos:relatedMatch <http://www.w3.org/2006/03/wn/wn20/instances/synset-stabilize-verb-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_departing>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "departing from a certain location";
+         skos:closeMatch <http://sw.opencyc.org/concept/Mx4rvWSHaJwpEbGdrcN5Y29ycA>;
+         skos:closematch <http://www.w3.org/2006/03/wn/wn20/instances/synset-go-verb-3> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_encounter>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "encounter between two actors (individuals or groups)" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_fired_upon>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_piracy>;
+         :label "firing upon victim";
+         skos:closeMatch <http://purl.org/vocabularies/princeton/wn30/synset-fire-noun-2>;
+         skos:relatedMatch <http://sw.opencyc.org/concept/Mx4rvVjrp5wpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-fire-noun-3> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_hijacked>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_piracy>;
+         :label "hijacking";
+         skos:closeMatch <http://purl.org/vocabularies/princeton/wn30/synset-hijacking-noun-1>,
+                <http://sw.opencyc.org/concept/Mx4rvjbFEZwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-highjacking-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_kidnapped>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_boarded>;
+         :label "kidnapping";
+         skos:closeMatch <http://purl.org/vocabularies/princeton/wn30/synset-boarding-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_moored>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_stopped>;
+         :label "moored" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_moving>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_underway>;
+         :label "moving";
+         skos:closeMatch <http://sw.opencyc.org/concept/Mx4rvVkEAZwpEbGdrcN5Y29ycA>;
+         skos:closematch <http://www.w3.org/2006/03/wn/wn20/instances/synset-travel-verb-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_not_specified>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_piracy>;
+         :label "no information provided",
+                "not specified" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_piracy>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_attempted>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_boarded>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_fired_upon>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_hijacked>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_not_specified>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_suspicious>;
+         :label "piracy";
+         skos:closeMatch <http://purl.org/vocabularies/princeton/wn30/synset-piracy-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_robbed>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_boarded>;
+         :label "robbery";
+         skos:closeMatch <http://purl.org/vocabularies/princeton/wn30/synset-robbery-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_sail_through>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "sailing through an anchorage without stopping" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_slowing_down>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "slowing down";
+         skos:closeMatch <http://www.w3.org/2006/03/wn/wn20/instances/synset-decelerate-verb-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_speeding_up>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "speeding up";
+         skos:closeMatch <http://www.w3.org/2006/03/wn/wn20/instances/synset-accelerate-verb-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_stopped>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_anchored>,
+                <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_moored>;
+         :label "stopped";
+         skos:closeMatch <http://sw.opencyc.org/concept/Mx8Ngh4r0saKNtO1EdmAAACQJw5drh4rvVkEAZwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-stop-verb-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_stopped_in_anchorage>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "stopped at anchoring spot (offshore)";
+         skos:broadMatch <http://sw.opencyc.org/concept/Mx8Ngh4r0saKNtO1EdmAAACQJw5drh4rvVkEAZwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-stop-verb-1>;
+         skos:relatedMatch <http://rdf.freebase.com/ns/en.anchor>,
+                <http://sw.opencyc.org/concept/Mx4rEZN5ZSTPEdyJBQDggVUTGw>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-anchor-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_stopped_in_harbor>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "stopped in a harbor";
+         skos:broadMatch <http://sw.opencyc.org/concept/Mx8Ngh4r0saKNtO1EdmAAACQJw5drh4rvVkEAZwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-stop-verb-1>;
+         skos:relatedMatch <http://sw.opencyc.org/concept/Mx4rvVjNz5wpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-seaport-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_stopped_in_water_lane>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "stopped in a water lane";
+         skos:broadMatch <http://sw.opencyc.org/concept/Mx8Ngh4r0saKNtO1EdmAAACQJw5drh4rvVkEAZwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-stop-verb-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_stopped_outside_harbor>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         :label "stopped, not inside a harbor";
+         skos:broadMatch <http://sw.opencyc.org/concept/Mx8Ngh4r0saKNtO1EdmAAACQJw5drh4rvVkEAZwpEbGdrcN5Y29ycA>,
+                <http://www.w3.org/2006/03/wn/wn20/instances/synset-stop-verb-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_suspicious>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_piracy>;
+         :label "suspicious vessel spotted";
+         skos:closeMatch <http://purl.org/vocabularies/princeton/wn30/synset-sighting-noun-1> .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_underway>     a <http://semanticweb.cs.vu.nl/2009/11/sem/EventType>;
+         <http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf> <http://semanticweb.cs.vu.nl/poseidon/ns/instances/etype_moving>;
+         :label "underway" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/rtype_Inspector>     a <http://semanticweb.cs.vu.nl/2009/11/sem/RoleType>;
+         :label "Inspector" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/rtype_Interrogator>     a <http://semanticweb.cs.vu.nl/2009/11/sem/RoleType>;
+         :label "Interrogator" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/rtype_Maintainer>     a <http://semanticweb.cs.vu.nl/2009/11/sem/RoleType>;
+         :label "Maintainer" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/rtype_Monitor>     a <http://semanticweb.cs.vu.nl/2009/11/sem/RoleType>;
+         :label "Monitor" .
+    
+    <http://semanticweb.cs.vu.nl/poseidon/ns/instances/rtype_PictureCompiler>     a <http://semanticweb.cs.vu.nl/2009/11/sem/RoleType>;
+         :label "Picture Compiler" .
+    
+#ENDS
