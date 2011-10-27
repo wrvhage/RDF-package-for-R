@@ -1,11 +1,11 @@
-#R = R
-R = R64
+R = R
+#R = R64
 CC = gcc
 OPTS = -c -fPIC
 LOADER = gcc
 
-#C_INCLUDE_PATH = /Developer/SDKs/MacOSX10.5.sdk/usr/include
-C_INCLUDE_PATH = /Developer/SDKs/MacOSX10.7.sdk/usr/include
+C_INCLUDE_PATH = /Developer/SDKs/MacOSX10.5.sdk/usr/include
+#C_INCLUDE_PATH = /Developer/SDKs/MacOSX10.7.sdk/usr/include
 RAPTOR_INCLUDE_PATH = /usr/local/include/raptor2
 #R_INCLUDE_PATH = /Library/Frameworks/R.framework/Versions/2.12/Resources/include
 R_INCLUDE_PATH = /Library/Frameworks/R.framework/Headers/

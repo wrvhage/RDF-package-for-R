@@ -57,5 +57,18 @@ is.vector(r$namespaces)
 r <- rdf_load("http://semanticweb.cs.vu.nl/2009/11/sem/")
 rdf_save(r, target='httptest.rdf', "rdfxml",
          namespaces=c('sem', '<http://semanticweb.cs.vu.nl/2009/11/sem/>'))
+
+# some RDF triples loaded from SPARQL end-points miss annotation 
+# of whether the values are URIs, Literals, or Blank nodes.
+# guess_types() can guess the types of the values automatically
+# so that the triples can be saved anyway.
+subject <- c('http://test/a', 'http://test/c')
+predicate <- c('ex:p', 'http://test/q')
+object <- c('_:genid1', 'hallo')
+triples <- data.frame(cbind(subject, predicate, object))
+
+rdf_save(list(triples=guess_types(triples),
+              namespaces=c('ex','<http://test/>')),
+         'lossytest.ttl')
 }
 

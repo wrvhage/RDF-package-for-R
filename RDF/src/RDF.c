@@ -227,6 +227,14 @@ raptor_term *parse_object_string(raptor_world *world, const char *object) {
 	return object_term;
 }
 
+void clean_up(raptor_term *base_uri_term, raptor_uri *base_uri,raptor_serializer *rdf_serializer,raptor_world *world) {
+	if (base_uri_term != NULL) raptor_free_term(base_uri_term);
+	if (base_uri != NULL) raptor_free_uri(base_uri);
+	if (rdf_serializer != NULL) raptor_free_serializer(rdf_serializer);
+	if (world) raptor_free_world(world);
+}
+
+
 SEXP rdf_save(SEXP data, SEXP target, SEXP format, SEXP spo, SEXP namespaces)
 {
 	SEXP triples, subject, predicate, object;
@@ -239,10 +247,22 @@ SEXP rdf_save(SEXP data, SEXP target, SEXP format, SEXP spo, SEXP namespaces)
 
 	subject = Rf_asCharacterFactor(getListElement(data, CHAR(STRING_ELT(spo,0))));
 	if (length(subject) == 0) {
+		printf("failed to interpret subject %s\n",CHAR(STRING_ELT(spo,0)));
+		clean_up(base_uri_term,base_uri,rdf_serializer,world);
 		return R_NilValue;
 	}
 	predicate = Rf_asCharacterFactor(getListElement(data, CHAR(STRING_ELT(spo,1))));
+	if (length(predicate) == 0) {
+		printf("failed to interpret predicate %s\n",CHAR(STRING_ELT(spo,1)));
+		clean_up(base_uri_term,base_uri,rdf_serializer,world);
+		return R_NilValue;
+	}
 	object = Rf_asCharacterFactor(getListElement(data, CHAR(STRING_ELT(spo,2))));
+	if (length(object) == 0) {
+		printf("failed to interpret object %s\n",CHAR(STRING_ELT(spo,2)));
+		clean_up(base_uri_term,base_uri,rdf_serializer,world);
+		return R_NilValue;
+	}
 	
 	world = raptor_new_world();
 	base_uri = raptor_new_uri(world, filename);
@@ -253,6 +273,11 @@ SEXP rdf_save(SEXP data, SEXP target, SEXP format, SEXP spo, SEXP namespaces)
 		const char *prefix = CHAR(STRING_ELT(namespaces, i));
 		const char *enveloped_uri = CHAR(STRING_ELT(namespaces, i+1));
 		raptor_term *term =  parse_subject_predicate_string(world,enveloped_uri);
+		if (term == NULL) {
+			printf("failed to parse namespace %s\n",enveloped_uri);
+			clean_up(base_uri_term,base_uri,rdf_serializer,world);
+			return R_NilValue;
+		}
 		raptor_serializer_set_namespace(rdf_serializer, (raptor_uri*)(term->value.uri), (strlen(prefix) > 0) ? prefix : NULL);
 		raptor_free_term(term);
 	}
@@ -263,16 +288,27 @@ SEXP rdf_save(SEXP data, SEXP target, SEXP format, SEXP spo, SEXP namespaces)
 		raptor_term *st = parse_subject_predicate_string(world, s),
 		            *pt = parse_subject_predicate_string(world, p),
 		            *ot = parse_object_string(world, o);
+		if (st == NULL) {
+			printf("failed to parse term %s\n",s);
+			clean_up(base_uri_term,base_uri,rdf_serializer,world);
+			return R_NilValue;
+		}
+		if (pt == NULL) {
+			printf("failed to parse term %s\n",p);
+			clean_up(base_uri_term,base_uri,rdf_serializer,world);
+			return R_NilValue;
+		}
+		if (ot == NULL) {
+			printf("failed to parse term %s\n",o);
+			clean_up(base_uri_term,base_uri,rdf_serializer,world);
+			return R_NilValue;
+		}
 		raptor_statement *triple = raptor_new_statement_from_nodes(world, st, pt, ot, base_uri_term);
 		raptor_serializer_serialize_statement(rdf_serializer, triple);
     }
 	raptor_serializer_serialize_end(rdf_serializer);
 	
-	raptor_free_term(base_uri_term);
-	raptor_free_uri(base_uri);
-	raptor_free_serializer(rdf_serializer);
-	raptor_free_world(world);
-
+	clean_up(base_uri_term,base_uri,rdf_serializer,world);
     return R_NilValue;
 }
 
