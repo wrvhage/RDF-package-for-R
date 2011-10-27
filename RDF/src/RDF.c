@@ -33,7 +33,7 @@ static void append_cache_data(cache * cache_data, char *s, char *p, char *o)
 
 char *term_to_string(raptor_term * term)
 {
-	return raptor_term_to_string(term);
+	return (char*)raptor_term_to_string(term);
 }
 
 static void cache_triple(void *user_data, raptor_statement * triple)
@@ -79,7 +79,7 @@ SEXP rdf_load(SEXP arg)
     world = raptor_new_world();
 
 	if (memcmp(source,"http",4 * sizeof(char)) == 0) {
-	    uri = raptor_new_uri(world, source);
+	    uri = raptor_new_uri(world, (unsigned const char*)source);
 	} else {
 		uri_str = raptor_uri_filename_to_uri_string(source);
 		uri = raptor_new_uri(world, uri_str);
@@ -155,13 +155,13 @@ raptor_term *parse_subject_predicate_string(raptor_world *world, const char *uri
 		char *uri = (char*)malloc((len - 1)*sizeof(char));
 		sprintf(uri, "%.*s", len - 2, uri_string + 1);
 		uri[len - 2] = '\0';
-		term = raptor_new_term_from_counted_uri_string(world, uri, len - 2);
+		term = raptor_new_term_from_counted_uri_string(world, (const unsigned char*)uri, len - 2);
 		free(uri);
 	} else if (uri_string[0] == '_') { // parsing a blank node
 		char *blank = (char*)malloc((len - 1)*sizeof(char));
 		sprintf(blank, "%.*s", len - 2, uri_string + 2);
 		blank[len - 2] = '\0';
-		term = raptor_new_term_from_counted_blank(world, blank, len - 2);
+		term = raptor_new_term_from_counted_blank(world, (const unsigned char*)blank, len - 2);
 		free(blank);
 	} else {
 		fprintf(stderr,"unable to parse URI %s, missing < > ?\n",uri_string);
@@ -176,13 +176,13 @@ raptor_term *parse_object_string(raptor_world *world, const char *object) {
 		char *uri = (char*)malloc((len - 1)*sizeof(char));
 		sprintf(uri, "%.*s", len - 2, object + 1);
 		uri[len - 2] = '\0';
-		object_term = raptor_new_term_from_counted_uri_string(world, uri, len - 2);
+		object_term = raptor_new_term_from_counted_uri_string(world, (const unsigned char*)uri, len - 2);
 		free(uri);
 	} else if (object[0] == '_') { // parsing a blank node
 		char *blank = (char*)malloc((len - 1)*sizeof(char));
 		sprintf(blank, "%.*s", len - 2, object + 2);
 		blank[len - 2] = '\0';
-		object_term = raptor_new_term_from_counted_blank(world, blank, len - 2);
+		object_term = raptor_new_term_from_counted_blank(world, (const unsigned char*)blank, len - 2);
 		free(blank);
 	} else { // parsing a literal
 		char *lit = NULL, *lang = NULL;
@@ -220,7 +220,7 @@ raptor_term *parse_object_string(raptor_world *world, const char *object) {
 			fprintf(stderr,"unable to parse literal %s, missing \" \" or malformed language or type tag?\n",object);
 			return NULL;
 		}
-		object_term = raptor_new_term_from_counted_literal(world, lit, (size_t)lit_len, datatype, lang, (size_t)type_lang_len);
+		object_term = raptor_new_term_from_counted_literal(world, (const unsigned char*)lit, (size_t)lit_len, datatype, (const unsigned char*)lang, (size_t)type_lang_len);
 		if (lit != NULL) free(lit);
 		if (lang != NULL) free(lang);
 	}
@@ -265,7 +265,7 @@ SEXP rdf_save(SEXP data, SEXP target, SEXP format, SEXP spo, SEXP namespaces)
 	}
 	
 	world = raptor_new_world();
-	base_uri = raptor_new_uri(world, filename);
+	base_uri = raptor_new_uri(world, (const unsigned char*)filename);
 	base_uri_term = raptor_new_term_from_uri(world, base_uri);
 	rdf_serializer = raptor_new_serializer(world, format_string);
 	raptor_serializer_start_to_filename(rdf_serializer, filename);
@@ -278,7 +278,7 @@ SEXP rdf_save(SEXP data, SEXP target, SEXP format, SEXP spo, SEXP namespaces)
 			clean_up(base_uri_term,base_uri,rdf_serializer,world);
 			return R_NilValue;
 		}
-		raptor_serializer_set_namespace(rdf_serializer, (raptor_uri*)(term->value.uri), (strlen(prefix) > 0) ? prefix : NULL);
+		raptor_serializer_set_namespace(rdf_serializer, (raptor_uri*)(term->value.uri), (strlen(prefix) > 0) ? (const unsigned char*)prefix : NULL);
 		raptor_free_term(term);
 	}
     for (i = 0; i < length(subject); i++) {

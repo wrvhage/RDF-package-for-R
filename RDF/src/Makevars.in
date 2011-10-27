@@ -1,0 +1,11 @@
+PKG_CPPFLAGS = @CPPFLAGS@ @PKG_CPPFLAGS@
+PKG_LIBS = @PKG_LIBS@
+
+R = ${R_HOME}/bin/R
+
+#RDF: RDF.so
+#	${R} -f ../R/RDF.R
+
+#RDF.so: RDF.o
+#	${R} CMD SHLIB $(CPPFLAGS) $(PKG_CPPFLAGS) -o RDF.so $(PKG_LIBS) RDF.o
+
