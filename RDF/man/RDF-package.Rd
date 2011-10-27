@@ -12,9 +12,9 @@ Load triples from RDF files into a data.frame. Save triples in a data.frame into
 Package: \tab RDF\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
-Date: \tab 2011-08-30\cr
+Date: \tab 2011-10-27\cr
 License: \tab GPL-3\cr
-SystemRequirements: \tab libraptor2\cr
+SystemRequirements: \tab libraptor2 (>= 2.0.0 http://librdf.org/raptor/)\cr
 LazyLoad: \tab yes\cr
 }
 }
